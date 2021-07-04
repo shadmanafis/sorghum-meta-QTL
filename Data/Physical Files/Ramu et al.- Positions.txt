@@ -1,4 +1,4 @@
-Sr no	Locus name	Minimum	Maximum	Product	Chromosome	Physical Map Position	Component SSRs	Overlaps	Duplicates
+Sr	Locus name	Minimum	Maximum	Product	Chromosome	Physical Map Position	Component SSRs	Overlaps	Duplicates
 1	Xiabtp062	69229	69402	173	1	0.0692		Overlap with SB0001	
 2	SB0001	69285	69469	184	1	0.0693		Overlap with Xiabtp062	
 3	SB0002	81629	81908	279	1	0.0816			
