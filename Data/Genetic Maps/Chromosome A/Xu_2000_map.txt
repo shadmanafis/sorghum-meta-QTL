@@ -1,0 +1,49 @@
+mapName=Xu_2000
+Organism Genus=Sorghum
+Organism Species=bicolor
+crossType=RI1
+popSize=98
+mappingCrossType=unknown
+mappingFunction=haldane
+mapUnit=cM
+mapExpansion=0
+mapQuality=0
+locusLocation=1
+chr=A
+lg=A
+1	Txs1075	0
+2	Umc135	3.33
+3	Txs301	19.44
+4	Csu2	19.44
+5	Hsp70	35.41
+6	Rubp	36.94
+7	Npi414	38.61
+8	Bnl15.20	42.78
+9	Bnl6.16	43.89
+10	Txs1114	45.7
+11	Csu146	48.2
+12	Csu103	48.2
+13	Txs422	48.2
+14	Txs1927	52.37
+15	Csu143	52.37
+16	Txs1175	65.15
+17	Wg889	68.07
+18	R	82.79
+19	Txs584	85.29
+20	Csu58	89.18
+21	Csu71	91.4
+22	Bcd102AD	97.93
+23	Txs1438	97.93
+24	Txs503	99.74
+25	Txs1941	101.41
+26	Txs1053	115.16
+27	Hsp17	122.94
+28	Hspx	122.94
+29	Hsp16.9B	125.58
+30	Txs1092	137.94
+31	Txs1287	137.94
+32	Txs1163A	137.94
+33	Csu16	143.91
+34	Txs1178	151.69
+35	Umc121	158.91
+36	Txs333	163.77

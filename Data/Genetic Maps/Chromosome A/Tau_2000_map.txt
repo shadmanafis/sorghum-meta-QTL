@@ -1,0 +1,36 @@
+mapName=Tau_2000
+Organism Genus=Sorghum
+Organism Species=bicolor
+crossType=RI1
+popSize=152
+mappingCrossType=unknown
+mappingFunction=haldane
+mapUnit=cM
+mapExpansion=0
+mapQuality=0
+locusLocation=1
+chr=A
+lg=A
+1	PSB129	0
+2	SSCIR78	10
+3	ASG24	40.65
+4	BCD1823/ST550	46.13
+5	TXP9	66.13
+6	CDO460	70.32
+7	SSCIR165	85.48
+8	TXS1053	102.9
+9	TS140	109.35
+10	CSU29	111.61
+11	BNL13.05	115.16
+12	ISU108	119.35
+13	TXS578	119.35
+14	RZ995	132.9
+15	TXS503	141.29
+16	UMC152	147.74
+17	CDO920	157.42
+18	RZ244.2	167.42
+19	ISU102	181.94
+20	CSU36	187.1
+21	ST355	202.26
+22	RZ323.2	231.29
+23	TXP31	241.61
