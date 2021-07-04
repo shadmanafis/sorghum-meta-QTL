@@ -1,0 +1,4 @@
+RFLP	txs,pSB,hhu,isu
+DArT	sPb,
+SSR	gap,txp,gpsb
+FISH	spb,umc,rz,csu,bn,cdo
