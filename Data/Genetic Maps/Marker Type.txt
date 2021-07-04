@@ -1,4 +1,19 @@
-RFLP	txs,pSB,hhu,isu
-DArT	sPb,
-SSR	gap,txp,gpsb
-FISH	spb,umc,rz,csu,bn,cdo
+type	intial	sample_name
+RFLP	
+	txs	txs1060
+	pSB	psb0017
+	hhu	hhu10
+	isu	isu105
+	umc	umc105
+	rz	rz323
+	csu	csu600
+	bnl	bnl1.326
+	cdo	cdo204
+
+DArT
+	sPb	spb-0017
+
+SSR	
+	gap	gap256
+	txp	txp107
+	gpsb	gpsb012
