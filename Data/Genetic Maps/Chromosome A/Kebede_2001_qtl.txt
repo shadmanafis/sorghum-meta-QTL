@@ -1,0 +1,2 @@
+mapName=Kebede_2001
+Stg A	Stay Green	null	null	null	A	A	10.2	55	48.60784314	61.39215686
