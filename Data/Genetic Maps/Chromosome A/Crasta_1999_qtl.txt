@@ -1,2 +1,2 @@
 mapName=Crasta_1999
-SGA	Stay Green	null	null	null	A	A	28.6	23.3	20.33161422	26.26838578
+SGA	Stay Green	null	null	null	A	A	1	28.6	23.3	20.33161422	26.26838578
