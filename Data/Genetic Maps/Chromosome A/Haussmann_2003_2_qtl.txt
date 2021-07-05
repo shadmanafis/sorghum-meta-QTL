@@ -1,11 +1,9 @@
 mapName=Haussmann_2003_2
 GL15 6	Stay Green	null	null	null	A	A	1	6.2	20	14.18355695	25.81644305
 GL15 7	Stay Green	null	null	null	A	A	1	23	165	163.4320893	166.5679107
-GL30 8	Stay Green	null	null	null	A	A	1	5.9	20	13.88780561	26.11219439															
-GL30 9	Stay Green	null	null	null	A	A	1	9.3	90	86.1223713	93.8776287															
-GL30 10	Stay Green	null	null	null	A	A	1	5.7	110	103.6733426	116.3266574															
+GL30 8	Stay Green	null	null	null	A	A	1	5.9	20	13.88780561	26.11219439
+GL30 9	Stay Green	null	null	null	A	A	1	9.3	90	86.1223713	93.8776287
+GL30 10	Stay Green	null	null	null	A	A	1	5.7	110	103.6733426	116.3266574
 GL30 11	Stay Green	null	null	null	A	A	1	12.7	165	162.1604766	167.8395234
-GL45 9	Stay Green	null	null	null	A	A	1	8	115	110.4922566	119.5077434															
-GL45 10	Stay Green	null	null	null	A	A	1	8.3	165	160.6551871	169.3448129															
-															
-																														
+GL45 9	Stay Green	null	null	null	A	A	1	8	115	110.4922566	119.5077434
+GL45 10	Stay Green	null	null	null	A	A	1	8.3	165	160.6551871	169.3448129
