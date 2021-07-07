@@ -1,0 +1,25 @@
+mapName=Reddy_2014
+Organism Genus=Sorghum
+Organism Species=bicolor
+crossType=RI1
+popSize=245
+mappingCrossType=unknown
+mappingFunction=haldane
+mapUnit=cM
+mapExpansion=0
+mapQuality=0
+locusLocation=1
+chr=A
+lg=SBI-01-1
+1	Undhsbm1	0
+2	txp79	2.61
+3	cup1	9.29
+4	isp314	11.23
+5	txp208	14.47
+6	txp71	15.57
+7	Undhsbm68	19.49
+8	txp302	22.77
+9	Undhsbm90	29.29
+10	S23	38.74
+11	isp269	44.51
+12	XnhsbSFC95	69.17
