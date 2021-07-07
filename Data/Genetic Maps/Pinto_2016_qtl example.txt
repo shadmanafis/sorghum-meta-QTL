@@ -1,3 +1,0 @@
-mapName=Pinto_2016
-QHhdae	Heading(dae)	null	null	null	Chr2B	2B	1	0.576	27	25.30547239	28.69452761
-QHmdae	Maturity(dae)	null	null	null	Chr2B	2B	1	0.742	34.2	32.88457156	35.51542844
