@@ -1,4 +1,4 @@
-mapName=Reddy_2014
+mapName=Reddy_2014_1
 Organism Genus=Sorghum
 Organism Species=bicolor
 crossType=RI1
