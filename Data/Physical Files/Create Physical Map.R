@@ -18,14 +18,12 @@ for(i in i){
   genetic[[j]] <- read.table(paste0(files[i]), sep="\t", skip=13, row.names = 1, fill = TRUE)
   j=j+1
 }
-genetic[[j]] <- read.table("Reddy_2014_map.txt", sep="\t", skip=13, row.names = 1, nrows = 12)
-genetic[[j+1]] <- read.table("Reddy_2014_map.txt", sep="\t", skip=27, row.names = 1)
 remove(files,i,j)
 
 # Modified maps from full consensus
-cons <- read_tsv("patt2003-1 consensus.txt", col_names = TRUE) %>%
-  filter(map_name=="A") %>%
-  select(c("feature_name","feature_start")) %>%
-  semi_join(all, by=c("feature_name"="V2")) %>%
-  arrange(feature_start)
-write.table(cons,"patt2003_sub",sep = "\t",quote = FALSE, row.names = TRUE)
+cons[[5]] <- read_tsv("mac2010a consensus.txt", col_names = TRUE) %>%
+  filter(map_name==1) %>%
+  select(c("feature_name","feature_aliases","feature_start")) %>%
+#semi_join(all, by=c("feature_name"="all")) %>%
+  arrange("Mean")
+write.table(cons,"sanches.txtt",sep = "\t",quote = FALSE, row.names = TRUE)
