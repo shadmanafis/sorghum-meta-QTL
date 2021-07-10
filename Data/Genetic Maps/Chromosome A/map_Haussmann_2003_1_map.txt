@@ -11,7 +11,7 @@ mapQuality=0
 locusLocation=1
 chr=A
 lg=A
-1	txp248	0
+1	txp248	0.0
 2	txp340	20.36
 3	txp284	34.29
 4	txp279	42.51

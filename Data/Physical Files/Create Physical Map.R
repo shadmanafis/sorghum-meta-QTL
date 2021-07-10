@@ -24,6 +24,15 @@ remove(files,i,j)
 cons[[5]] <- read_tsv("mac2010a consensus.txt", col_names = TRUE) %>%
   filter(map_name==1) %>%
   select(c("feature_name","feature_aliases","feature_start")) %>%
-#semi_join(all, by=c("feature_name"="all")) %>%
+  semi_join(tokeep, by=c("feature_name"="tokeep")) %>%
   arrange("Mean")
 write.table(cons,"sanches.txtt",sep = "\t",quote = FALSE, row.names = TRUE)
+
+
+nms <- combn( names(genetic) , 2 , FUN = paste0 , collapse = "" , simplify = FALSE )
+# Make the combinations of list elements
+ll <- combn( l , 2 , simplify = FALSE )
+# Intersect the list elements
+out <- lapply( ll , function(x) length( intersect( x[[1]] , x[[2]] ) ) )
+# Output with names
+setNames( out , nms )

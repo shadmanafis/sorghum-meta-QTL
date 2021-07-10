@@ -1,0 +1,37 @@
+mapName=Sanches_cons
+Organism Genus=Sorghum
+Organism Species=bicolor
+crossType=unknown
+popSize=0
+mappingCrossType=unknown
+mappingFunction=unknown
+mapUnit=cM
+mapExpansion=0
+mapQuality=0
+locusLocation=1
+chr=A
+lg=A
+1	txs333	0.0
+2	umc121	4.9
+3	hhu61	33.0
+4	txs503	68.7
+5	psb32	84.4
+6	csu71	91.7
+7	csu58	94.7
+8	txp31	96.8
+9	rz323	99.4
+10	m343356	106.3
+11	r	110.4
+12	wg889	128.2
+13	txs307	140.3
+14	csu143	168.1
+15	csu103	174.9
+16	csu146	174.9
+17	txs422	174.9
+18	bnl6.16	178.6
+19	bnl15.20	179.6
+20	psb175	205.2
+21	txs301	216.4
+22	csu2	217.0
+23	umc135	234.9
+24	psb243	246.9
