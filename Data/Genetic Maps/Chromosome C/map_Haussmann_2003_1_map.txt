@@ -1,0 +1,21 @@
+mapName=Haussmann_2003_1
+Organism Genus=Sorghum
+Organism Species=bicolor
+crossType=RI1
+popSize=226
+mappingCrossType=unknown
+mappingFunction=haldane
+mapUnit=cM
+mapExpansion=0
+mapQuality=0
+locusLocation=1
+chr=C
+lg=C
+1	bnl5.37	0
+2	umc7	18.22
+3	txp114	37.51
+4	umc93	53.94
+5	sb5-236	68.23
+6	txp33	73.6
+7	14/48-173	106.1
+8	txp228	150.74
