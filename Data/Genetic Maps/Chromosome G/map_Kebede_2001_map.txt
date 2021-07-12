@@ -1,0 +1,17 @@
+mapName=Kebede_2001
+Organism Genus=Sorghum
+Organism Species=bicolor
+crossType=RI1
+popSize=125
+mappingCrossType=unknown
+mappingFunction=kosambi
+mapUnit=cM
+mapExpansion=0
+mapQuality=0
+locusLocation=1
+chr=G
+lg=G
+1	psb611	0
+2	tsc528	9.93
+3	txs645	37.11
+4	hu504	40.25
