@@ -1,0 +1,68 @@
+mapName=Mace_cons
+Organism Genus=Sorghum
+Organism Species=bicolor
+crossType=unknown
+popSize=0
+mappingCrossType=unknown
+mappingFunction=unknown
+mapUnit=cM
+mapExpansion=0
+mapQuality=0
+locusLocation=1
+chr=C
+lg=C
+1	txs333	0
+2	umc121	5.25
+3	txp266	6.1
+4	txp228	6.3
+5	txs1178	6.3
+6	txs31	6.3
+7	umc124	20.8
+8	txs1092	24.6
+9	txp215	30.7
+10	txp9	31.7
+11	txs1053	38.4
+12	txs578	47.15
+13	isu148	48.9
+14	txs503	51.5
+15	rz244	56.25
+16	txs1438	56.25
+17	umc10	56.25
+18	txs1162	56.25
+19	cdo920	57.9
+20	txp33	61.3
+21	gap236	62.8
+22	isu114	65.1
+23	txp205	68.1
+24	txp31	71.1
+25	txp336	73.15
+26	txp183	75.2
+27	txs584	85.4
+28	umc63	87.8
+29	txp120	88.35
+30	umc93	88.35
+31	txp2	91.7
+32	cdo1160	98.9
+33	txp231	101.05
+34	txp59	103.2
+35	bcd828	110.2
+36	cdo470	110.85
+37	txp218	110.85
+38	txs1175	110.85
+39	umc16	110.85
+40	umc17	110.85
+41	isu121	111.5
+42	txp114	113.65
+43	sbage01	123.6
+44	txs1927	126
+45	txs422	126
+46	bcd738	129
+47	stgnhsbm17	132.8
+48	isu166	134.5
+49	txs1226	135.4
+50	txp285	136.6
+51	txp38	138.05
+52	txp34	147.8
+53	altsb	152
+54	txp69	160.15
+

@@ -1,2 +1,2 @@
 mapName=Tau_2000
-QStg1	Stay Green	null	null	null	A	A	1.0	0.153	77.0	73.49552804000001	80.50447195999999
+QStg3	Stay Green	null	null	null	C	C	1	13.1	247	242.9069908	251.0930092

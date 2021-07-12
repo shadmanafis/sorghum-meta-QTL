@@ -2,11 +2,11 @@ library(readr)
 library(tidyr)
 library(dplyr)
 phy <- read.table("Ramu et al.- Positions.txt", sep="\t", header = TRUE, row.names = 1) 
-phy <- filter(phy, Chromosome==1) %>%
-  slice(-grep("SB",phy$Locus.name)) %>%
+phy <- filter(phy, Chromosome==3) %>%
+  slice(-grep("SB*",phy$Locus.name)) %>%
   select(c("Locus.name","Physical.Map.Position"))
 phy[,1] <- gsub("X","",phy[,1])
-write.table(phy,"phy_r.txt",sep = "\t",quote = FALSE, row.names = TRUE)
+write.table(phy,"phy_r3.txt",sep = "\t",quote = FALSE, row.names = TRUE)
 
 #read genetic files
 setwd("C:/Users/Shabana Usmani/sorghum-meta/sorghum-meta-QTL/Data/Genetic Maps/Chromosome C")
@@ -22,11 +22,11 @@ remove(files,i,j)
 
 # Modified maps from full consensus
 cons[[1]] <- read_tsv("kl2004 consensus.txt", col_names = TRUE) %>%
-  filter(map_name=="LG-01") %>%
-  select(c("feature_name","feature_aliases","feature_start")) %>%
-#semi_join(tokeep, by=c("feature_name"="tokeep")) %>%
-  arrange("Mean")
-write.table(cons,"sanches.txtt",sep = "\t",quote = FALSE, row.names = TRUE)
+  filter(map_name=="LG-03") %>%
+  select(c("feature_name","feature_start")) %>%
+  semi_join(tokeep, by=c("feature_name"="tokeep")) %>%
+  arrange("feature_start")
+write.table(cons[[1]],"klein3.txt",sep = "\t",quote = FALSE, row.names = TRUE)
 
 names(gen_con) <- c("Haus1","Haus2","Keb","Reddy","Sab","Sri","Tau","cons1","cons2","cons3")
 #INTERSECTIONS

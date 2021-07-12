@@ -1,2 +1,2 @@
-mapName=Tau_2000
-QStg1	Stay Green	null	null	null	A	A	1.0	0.153	77.0	73.49552804000001	80.50447195999999
+mapName=Sabadin_2012
+St3	Stay Green	null	null	null	C	C	1	29.9	26	23.27424749	28.72575251
