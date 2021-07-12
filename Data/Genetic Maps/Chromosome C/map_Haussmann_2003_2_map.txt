@@ -11,7 +11,7 @@ mapQuality=0
 locusLocation=1
 chr=C
 lg=C
-1	txp38	0
+1	txp38	0.0
 2	bnl537	36.24
 3	txp114	71.89
 4	1149320	76.25

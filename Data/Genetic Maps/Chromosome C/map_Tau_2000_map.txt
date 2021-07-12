@@ -11,8 +11,8 @@ mapQuality=0
 locusLocation=1
 chr=C
 lg=C
-1	psb508	0
-2	st1421	20
+1	psb508	0.0
+2	st1421	20.0
 3	st1916	25.33
 4	psb600	35.66
 5	txs1625	35.66

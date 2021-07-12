@@ -1,4 +1,4 @@
-mapName=Mace_cons
+mapName=physical
 Organism Genus=Sorghum
 Organism Species=bicolor
 crossType=unknown

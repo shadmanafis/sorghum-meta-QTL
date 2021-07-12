@@ -11,7 +11,7 @@ mapQuality=0
 locusLocation=1
 chr=C
 lg=C
-1	undhsbm56	0
+1	undhsbm56	0.0
 2	undhsbm52	3.08
 3	isp282	4.23
 4	cup11	9.87

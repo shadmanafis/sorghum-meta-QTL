@@ -11,7 +11,7 @@ mapQuality=0
 locusLocation=1
 chr=C
 lg=C
-1	bnl537	0
+1	bnl537	0.0
 2	umc7	18.22
 3	txp114	37.51
 4	umc93	53.94

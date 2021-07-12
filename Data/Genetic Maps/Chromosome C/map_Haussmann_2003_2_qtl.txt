@@ -1,2 +1,2 @@
 mapName=Haussmann_2003_2
-GL45 12	Stay Green	null	null	null	C	C	1	5.6	90	83.56036662	96.43963338
+GL45 12	Stay Green	null	null	null	C	C	1.0	0.055999999999999994	90.0	83.56036662	96.43963338

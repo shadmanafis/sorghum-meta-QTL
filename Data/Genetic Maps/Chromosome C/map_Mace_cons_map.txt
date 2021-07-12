@@ -11,7 +11,7 @@ mapQuality=0
 locusLocation=1
 chr=C
 lg=C
-1	txs333	0
+1	txs333	0.0
 2	umc121	5.25
 3	txp266	6.1
 4	txp228	6.3
@@ -54,15 +54,14 @@ lg=C
 41	isu121	111.5
 42	txp114	113.65
 43	sbage01	123.6
-44	txs1927	126
-45	txs422	126
-46	bcd738	129
+44	txs1927	126.0
+45	txs422	126.0
+46	bcd738	129.0
 47	stgnhsbm17	132.8
 48	isu166	134.5
 49	txs1226	135.4
 50	txp285	136.6
 51	txp38	138.05
 52	txp34	147.8
-53	altsb	152
+53	altsb	152.0
 54	txp69	160.15
-
