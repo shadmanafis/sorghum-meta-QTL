@@ -1,4 +1,4 @@
-mapName=kebede_2001_2
+mapName=Kebede_2001
 Organism Genus=unknown
 Organism Species=unknown
 crossType=unknown
@@ -10,7 +10,7 @@ mapExpansion=0
 mapQuality=0
 locusLocation=1
 chr=SBI-01
-lg=G
+lg=SBI-01
 1	psb0611	0.0
 2	tsc528	9.843627806312554
 3	umc128	11.999999999999998

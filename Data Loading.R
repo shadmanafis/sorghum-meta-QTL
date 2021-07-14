@@ -15,9 +15,11 @@ remove(files,i,j)
 
 # Consensus Map Loading
 cons <- list()
-cons[[1]] <- read_tsv("kl2004.txt", col_names = TRUE) %>%
-  filter(map_name=="LG-01") %>%
+cons[[3]] <- read_tsv("patt2003.txt", col_names = TRUE) %>%
+  filter(map_name=="C") %>%
   select(c("feature_name","feature_start")) %>%
   # semi_join(tokeep, by=c("feature_name"="tokeep")) %>%
   arrange(feature_start)
+cons[[3]]$feature_name <- tolower(cons[[3]]$feature_name)
+cons[[2]]$feature_name <- gsub("[[:punct:]]","",cons[[2]]$feature_name)
 write.table(cons[[1]],"klein3.txt",sep = "\t",quote = FALSE, row.names = TRUE)

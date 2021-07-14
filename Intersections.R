@@ -1,4 +1,4 @@
-names(gen_con) <- c("Crasta","Haus1","Haus2","Keb","Reddy","Sab","Tau","Klein","Mace","RAMI")
+names(gen_con) <- c("Crasta","Haus1","Haus2","Keb","Reddy","Sri","Tau","Klein","pHY","Patt")
 
 #INTERSECTIONS
 nm <- combn(names(gen_con),2,FUN = paste0, collapse = "&",simplify = FALSE)
@@ -13,9 +13,9 @@ setNames(out,nm)
 
 for(i in 1:7){
   genetic[[i]]$V2 <- gsub("[[:punct:]]","",genetic[[i]]$V2)
-  genetic[[i]]$V2 <- gsub("psb0","psb",genetic[[i]]$V2)
-  genetic[[i]]$V2 <- gsub("umc0","umc",genetic[[i]]$V2)
-  genetic[[i]]$V2 <- gsub("csu0","csu",genetic[[i]]$V2)
+  # genetic[[i]]$V2 <- gsub("psb0","psb",genetic[[i]]$V2)
+  # genetic[[i]]$V2 <- gsub("umc0","umc",genetic[[i]]$V2)
+  # genetic[[i]]$V2 <- gsub("csu0","csu",genetic[[i]]$V2)
   genetic[[i]]$V2 <- tolower(genetic[[i]]$V2)
   arrange(genetic[[i]],"V3")
 }

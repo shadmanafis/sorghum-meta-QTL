@@ -9,8 +9,8 @@ mapUnit=cM
 mapExpansion=0
 mapQuality=0
 locusLocation=1
-chr=A
-lg=A
+chr=SBI-01
+lg=SBI-01
 1	txp323	0.0
 2	txp46	1.82635536208943
 3	txp248	1.82635536208943
