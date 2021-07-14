@@ -11,13 +11,13 @@ mapQuality=0
 locusLocation=1
 chr=SBI-04
 lg=SBI-04
-1	txp506	0
+1	txp506	0.0
 2	txp504	6.1
 3	txp328	6.1
 4	dsenhsbm95	6.1
 5	spb8887	8.3
 6	cdo962	8.3
-7	cup48	10
+7	cup48	10.0
 8	txs754	10.5
 9	ungnhsbm32	15.2
 10	msbcir340	15.3
@@ -70,9 +70,9 @@ lg=SBI-04
 57	spb4625	137.5
 58	gpsb045	140.1
 59	bcd1427	141.7
-60	txs1103	145
+60	txs1103	145.0
 61	txp27	151.1
-62	txp21	153
+62	txp21	153.0
 63	spb6098	156.45
 64	umc104	164.3
 65	spb0110	169.4

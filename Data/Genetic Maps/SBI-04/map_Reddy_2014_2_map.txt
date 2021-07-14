@@ -11,7 +11,7 @@ mapQuality=0
 locusLocation=1
 chr=SBI-04
 lg=SBI-04
-1	txp12	0
+1	txp12	0.0
 2	txp343	15.89
 3	isep203	25.45
 4	dnhsbm43	29.67
@@ -20,6 +20,6 @@ lg=SBI-04
 7	isp343	59.89
 8	isep524	73.89
 9	txp51	76.67
-10	txp212	90
-11	isep234	103
+10	txp212	90.0
+11	isep234	103.0
 12	undhsbm265	116.44

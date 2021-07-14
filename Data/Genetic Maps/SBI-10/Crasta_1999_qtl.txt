@@ -1,0 +1,2 @@
+mapName=Crasta_1999
+SGB	Stay Green	null	null	null	SBI-10	SBI-10	1	14.4	2.9	-2.995543981	8.795543981

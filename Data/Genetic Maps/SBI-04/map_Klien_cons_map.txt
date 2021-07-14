@@ -11,7 +11,7 @@ mapQuality=0
 locusLocation=1
 chr=SBI-04
 lg=SBI-04
-1	cdo962	5
+1	cdo962	5.0
 2	txs754	9.7
 3	umc111	15.5
 4	txp343	91.6

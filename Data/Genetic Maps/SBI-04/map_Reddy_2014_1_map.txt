@@ -11,7 +11,7 @@ mapQuality=0
 locusLocation=1
 chr=SBI-04
 lg=SBI-04
-1	nhsbm1164	0
+1	nhsbm1164	0.0
 2	nhsbm1157	7.78
 3	undhsbm66	10.89
 4	isep948	11.56

@@ -11,7 +11,7 @@ mapQuality=0
 locusLocation=1
 chr=SBI-04
 lg=SBI-04
-1	csu177	0
+1	csu177	0.0
 2	psb637b	17.73
 3	psb456	23.09
 4	bnl5.71	33.27

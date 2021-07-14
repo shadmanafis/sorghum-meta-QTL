@@ -1,8 +1,8 @@
-mapName=Reddy_2014_3
+mapName=Srinivas_2008
 Organism Genus=Sorghum
 Organism Species=bicolor
 crossType=RI1
-popSize=245
+popSize=168
 mappingCrossType=unknown
 mappingFunction=haldane
 mapUnit=cM
@@ -11,5 +11,8 @@ mapQuality=0
 locusLocation=1
 chr=SBI-04
 lg=SBI-04
-1	txp104	0
-2	txp97	1.44
+1	txp328	0.0
+2	dsenhsbm95	6.2
+3	txp48	12.5
+4	ungnhsbm32	16.2
+5	cup05	24.5
