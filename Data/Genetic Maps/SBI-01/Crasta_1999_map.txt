@@ -1,0 +1,27 @@
+mapName=Crasta_1999
+Organism Genus=Sorghum
+Organism Species=bicolor
+crossType=RI1
+popSize=96
+mappingCrossType=unknown
+mappingFunction=kosambi
+mapUnit=cM
+mapExpansion=0
+mapQuality=0
+locusLocation=1
+chr=SBI-01
+lg=G
+1	psb0508	0
+2	csu111	34.71
+3	bnl509	64.81
+4	csu93	72.46
+5	csu142	89.81
+6	txs1765	101.03
+7	psb050	128.09
+8	txs1225	144.93
+9	txs1129	147.99
+10	cdo20	205.65
+11	umc27	264.33
+12	csu77	302.09
+13	txs1162	321.5
+14	txs1075	338.85

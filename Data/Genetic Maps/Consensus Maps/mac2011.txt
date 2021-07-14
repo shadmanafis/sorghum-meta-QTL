@@ -1,4 +1,4 @@
-Marker	Bridge	LG	cM	Mean	Type	Multicopy	
+feature_name	Bridge	map_name	cM	feature_start	Type	Multicopy	
 isu062	no	1	0	0	RFLP		
 sPb-4544	no	1	0	0	DArT		
 cup58	no	1	0-3.3	1.65	SSR		
