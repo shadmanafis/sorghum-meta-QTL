@@ -1,4 +1,4 @@
-mapName=Reddy_1_2
+mapName=Reddy_1
 Organism Genus=Sorghum
 Organism Species=bicolor
 crossType=RI1
@@ -11,12 +11,12 @@ mapQuality=0
 locusLocation=1
 chr=SBI-02
 lg=SBI-02
-1	undhsbm82	0
-2	xtxp197	14.69
-3	xcup64	23.89
+1	undhsbm82	0.0
+2	txp197	14.69
+3	cup64	23.89
 4	sbagh04	27.86
-5	xtxp25	37.7
-6	xtxp80	41.82
-7	xtxp211	49.85
-8	xtxp304	53.57
-9	xtxp50	57.89
+5	txp25	37.7
+6	txp80	41.82
+7	txp211	49.85
+8	txp304	53.57
+9	txp50	57.89

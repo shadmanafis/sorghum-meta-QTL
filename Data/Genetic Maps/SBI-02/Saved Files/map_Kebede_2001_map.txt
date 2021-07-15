@@ -11,8 +11,8 @@ mapQuality=0
 locusLocation=1
 chr=SBI-02
 lg=SBI-02
-1	psb541	0
-2	psb498	0
+1	psb541	0.0
+2	psb498	0.0
 3	txs1891	22.82
 4	txs1271	35.37
 5	ws33-2	35.37

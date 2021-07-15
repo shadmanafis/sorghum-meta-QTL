@@ -1,4 +1,4 @@
-mapName=Xu_Subudhi_2000
+mapName=Xu_subhudhi
 Organism Genus=Sorghum
 Organism Species=bicolor
 crossType=RI1
@@ -11,7 +11,7 @@ mapQuality=0
 locusLocation=1
 chr=SBI-02
 lg=SBI-02
-1	csu13	0
+1	csu13	0.0
 2	txs1891	19.31
 3	txs1162	41.81
 4	txs1433	41.81

@@ -1,2 +1,0 @@
-map_name = Reddy_2014-02-2
-QGlab-dsr02-2	Stay Green	null	null	null	B	SBI-02-2	1	4.7	27	19.92227529	34.07772471
