@@ -12,11 +12,11 @@ locusLocation=1
 chr=SBI-02
 lg=SBI-02
 1	undhsbm154	0
-2	xtxp4	7.73
-3	xtxp72	16.16
-4	xtxp3	16.16
-5	xtxp19	20.07
-6	xisp346	22.28
+2	txp4	7.73
+3	txp72	16.16
+4	txp3	16.16
+5	txp19	20.07
+6	isp346	22.28
 7	pericarp2	26.3
-8	xtxp13	26.7
-9	xisp280	32.32
+8	txp13	26.7
+9	isp280	32.32
