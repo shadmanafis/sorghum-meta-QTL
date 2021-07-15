@@ -1,0 +1,2 @@
+map_name = Subudhi_2000_02
+Stg3	Stay Green	null	null	null	SBI-02	SBI-02	1	10.7	75	67.22773221	82.77226779
