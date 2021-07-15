@@ -1,4 +1,4 @@
-mapName=Haussmann_2003_1
+mapName=Haussmann_2003_2
 Organism Genus=Sorghum
 Organism Species=bicolor
 crossType=RI1
@@ -11,8 +11,8 @@ mapQuality=0
 locusLocation=1
 chr=SBI-10
 lg=SBI-10
-1	umc113	41.28
-2	txp270	62.04
-3	11/55-374	72.87
-4	14/48-316	95.42
-5	txp141	120.13
+1	isu136	0.0
+2	umc113	5.54
+3	txp217	48.91
+4	sb1-1	85.15
+5	txp141	111.09
