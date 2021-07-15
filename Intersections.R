@@ -1,4 +1,4 @@
-names(gen_con) <- c("Crasta","Haus1","Red1","Red2","Red3","Sab","Sri","Klein","Mac","patt","phy")
+names(gen_con) <- c("Haus","Sab","Klein","Mac","phy")
 
 #INTERSECTIONS
 nm <- combn(names(gen_con),2,FUN = paste0, collapse = "&",simplify = FALSE)
