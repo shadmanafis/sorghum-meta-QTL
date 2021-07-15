@@ -1,0 +1,2 @@
+mapName=Haussmann_2003_1
+GL15 3	Stay Green	null	null	null	SBI-07	SBI-07	1	5.2	45	38.06501021	51.93498979
