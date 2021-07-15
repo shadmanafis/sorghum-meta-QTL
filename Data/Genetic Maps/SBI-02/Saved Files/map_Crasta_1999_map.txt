@@ -11,7 +11,7 @@ mapQuality=0
 locusLocation=1
 chr=SBI-02
 lg=SBI-02
-1	csu63	0
+1	csu63	0.0
 2	umc5	32.85
 3	txs2042	100.7
 4	rz404	107.84

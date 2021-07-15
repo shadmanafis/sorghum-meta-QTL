@@ -11,7 +11,7 @@ mapQuality=0
 locusLocation=1
 chr=SBI-02
 lg=SBI-02
-1	psb0487	0
+1	psb0487	0.0
 2	cd059	10.33
 3	st1537	40.66
 4	st499	65.33
