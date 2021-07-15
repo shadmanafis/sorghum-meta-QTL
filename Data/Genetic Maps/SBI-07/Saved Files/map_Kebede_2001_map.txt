@@ -11,7 +11,7 @@ mapQuality=0
 locusLocation=1
 chr=SBI-07
 lg=SBI-07
-1	txs644	0
+1	txs644	0.0
 2	txs1931	6.19
 3	umc85	11.19
 4	txs1096	20.47

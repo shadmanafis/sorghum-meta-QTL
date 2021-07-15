@@ -11,7 +11,7 @@ mapQuality=0
 locusLocation=1
 chr=SBI-07
 lg=SBI-07
-1	isep131	0
+1	isep131	0.0
 2	gpsb148	3.09
 3	isp362	4.12
 4	txp40	7.21
