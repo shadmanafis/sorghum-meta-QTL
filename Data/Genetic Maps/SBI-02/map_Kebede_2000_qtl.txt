@@ -1,0 +1,2 @@
+map_name = Kebedde_2000
+Stg B	Stay Green	null	null	null	SBI-02	SBI-02	1	13.8	6.7	1.975362319	11.42463768

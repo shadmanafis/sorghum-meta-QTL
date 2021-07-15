@@ -1,0 +1,9 @@
+map_name = Reddy_2014_02-3
+QGlm-dsr02-3a	Stay Green	null	null	null	B	SBI-02-3	1	13.9	38.6	36.20681251	40.99318749
+QGlm-dsr02-3b	Stay Green	null	null	null	B	SBI-02-3	1	8.2	45.7	41.64325535	49.75674465
+QGlm-dsr02-3c	Stay Green	null	null	null	B	SBI-02-3	1	5.1	49.4	42.87739096	55.92260904
+QPglm-dsr02-3a	Stay Green	null	null	null	B	SBI-02-3	1	14.9	57.9	55.66742912	60.13257088
+QPglm-dsr02-3b	Stay Green	null	null	null	B	SBI-02-3	1	5.7	49.4	43.56398138	55.23601862
+QGlam-dsr02-3a	Stay Green	null	null	null	B	SBI-02-3	1	10.7	55.9	52.79109289	59.00890711
+QGlam-dsr02-3b	Stay Green	null	null	null	B	SBI-02-3	1	5.7	42.7	36.86398138	48.53601862
+QPglam-dsr02-3	Stay Green	null	null	null	B	SBI-02-3	1	13.1	54.9	52.36066365	57.43933635

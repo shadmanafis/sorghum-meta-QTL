@@ -1,0 +1,2 @@
+map_name=Crasta_1999-02
+SGD	Stay Green	null	null	null	SBI-02	SBI-02	1	22.5	2	-1.773148148	5.773148148

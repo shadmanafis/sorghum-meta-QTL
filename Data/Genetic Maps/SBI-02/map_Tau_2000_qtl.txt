@@ -1,0 +1,2 @@
+map_name=Tau_2000
+QStg2	Stay Green	null	null	null	SBI-02	SBI-02	1	14.5	275	271.3021779	278.6978221
