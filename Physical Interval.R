@@ -5,7 +5,7 @@ library(GenomicRanges)
 
 # Load Genetic Data
 setwd("C:/Users/Shabana Usmani/sorghum-meta/sorghum-meta-QTL/Data/Physical Files")
-phy <- read_tsv("Ramu et al.- Positions.txt", col_names = TRUE) #%>%
+phy <- read_tsv("Ramu_Jun.txt", col_names = TRUE) #%>%
   # filter(Chromosome==1)
 phy <- dplyr::slice(phy,-grep("SB",phy$`Locus name`)) %>%
   dplyr::select(`Locus name`,`Physical Map Position`)
@@ -51,4 +51,6 @@ df <- data.frame(MQTL = row.names(df),markers = df$markers)%>%
   separate_rows(markers,sep = ",", convert = FALSE) %>%
   left_join(phy,by=c("markers"="Locus name"))
 
+df <- left_join(df,data.frame(MQTL=row.names(meta),meta[,3]),by=c("MQTL"="MQTL"))
+df <- right_join(df,Consensus, by=c("markers"="feature","chr"="chr"))[,1:5]
 write.table(df,"MQTL-Markers-Positions.txt", sep = "\t", quote = FALSE, row.names = FALSE)
