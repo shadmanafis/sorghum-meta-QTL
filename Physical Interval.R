@@ -1,18 +1,19 @@
 library(readr)
 library(tidyr)
 library(dplyr)
-library(GRanges)
-# Load Genetic Data
+library(GenomicRanges)
 
-phy <- read_tsv("Ramu et al.- Positions.txt", col_names = TRUE) %>%
-  filter(Chromosome==1)
-phy <- slice(phy,-grep("SB",phy$`Locus name`)) %>%
-  select(`Locus name`,`Physical Map Position`)
+# Load Genetic Data
+setwd("C:/Users/Shabana Usmani/sorghum-meta/sorghum-meta-QTL/Data/Physical Files")
+phy <- read_tsv("Ramu et al.- Positions.txt", col_names = TRUE) #%>%
+  # filter(Chromosome==1)
+phy <- dplyr::slice(phy,-grep("SB",phy$`Locus name`)) %>%
+  dplyr::select(`Locus name`,`Physical Map Position`)
 phy$`Locus name` <- gsub("X","",phy$`Locus name`) %>%
   tolower()
 
 # Set WOrking Directory, Granges list from all the consensus maps
-
+setwd("C:/Users/Shabana Usmani/sorghum-meta/sorghum-meta-QTL/Results/Consensus Maps")
 files <- list.files()
 i <- grep("map",files)
 j <- 1
@@ -26,10 +27,28 @@ for(i in i){
  
 }
 remove(files,i,j,f, Chromosome)
-Consensus <- data.frame(chr=Consensus$Chromosome,start=Consensus$V3,end=Consensus$V3,feature=Consensus$V2)
+Consensus <- data.frame(chr=Consensus$Chromosome,start=Consensus$V3,end = Consensus$V3+1,feature=tolower(Consensus$V2))
 GR <- makeGRangesFromDataFrame(Consensus, keep.extra.columns=TRUE)
 
-# Get markers inside or flanking the Meta-QTL
+setwd("C:/Users/Shabana Usmani/sorghum-meta/sorghum-meta-QTL/Results")
+meta <- read_tsv("Meta.txt")
+gr <- makeGRangesFromDataFrame(meta)
 
-hits <- subjectHits(findOverlaps(gr,GR))
-GR[(min(hits)-1):(max(hits)+1)]$feature
+# Get markers inside or flanking the Meta-QTL
+df <- data.frame()
+for(i in 1:length(ranges(gr))){
+  hits <- subjectHits(findOverlaps(gr[i],GR))
+  if(length(hits)!=0){
+    df <- rbind(df,paste(GR[(min(hits)-1):(max(hits)+1)]$feature,collapse = ","))
+  } else {
+      hits <- nearest(gr[i],GR)
+     df <- rbind(df,paste(GR[(min(hits)-1):(max(hits)+1)]$feature,collapse = ","))
+  }
+}
+colnames(df) <- "markers"
+values(gr) <- df
+df <- data.frame(MQTL = row.names(df),markers = df$markers)%>%
+  separate_rows(markers,sep = ",", convert = FALSE) %>%
+  left_join(phy,by=c("markers"="Locus name"))
+
+write.table(df,"MQTL-Markers-Positions.txt", sep = "\t", quote = FALSE, row.names = FALSE)
