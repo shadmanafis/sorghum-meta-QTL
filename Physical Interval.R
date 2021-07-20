@@ -1,17 +1,18 @@
 library(readr)
 library(tidyr)
 library(dplyr)
+library(biomaRt)
 library(GenomicRanges)
 
-# Load Genetic Data
+# Load Physical Data
 setwd("C:/Users/Shabana Usmani/sorghum-meta/sorghum-meta-QTL/Data/Physical Files")
 phy <- read_tsv("Ramu_Jun.txt", col_names = TRUE) #%>%
-  # filter(Chromosome==1)
 phy <- dplyr::slice(phy,-grep("SB",phy$`Locus name`)) %>%
   dplyr::select(`Locus name`,`Physical Map Position`)
 phy$`Locus name` <- gsub("X","",phy$`Locus name`) %>%
   tolower()
 phy <- phy[!duplicated(phy$`Locus name`),]
+
 # Set WOrking Directory, Granges list from all the consensus maps
 setwd("C:/Users/Shabana Usmani/sorghum-meta/sorghum-meta-QTL/Results/Consensus Maps")
 files <- list.files()
@@ -28,10 +29,11 @@ for(i in i){
 }
 remove(files,i,j,f, Chromosome)
 Consensus <- data.frame(chr=Consensus$Chromosome,start=Consensus$V3,end = Consensus$V3+1,feature=tolower(Consensus$V2))
-Consensus <- left_join(Consensus,phy, by=c("feature"="Locus name"))
+Consensus <- left_join(Consensus,phy, by=c("feature"="Locus name"))           # Joining with physical data
 Consensus <- Consensus[is.na(Consensus$`Physical Map Position`)==FALSE,]
 Consensus <- Consensus[!duplicated(Consensus$feature),]
 
+# Removing markers with incorrect locus order 
 Temp <- split.data.frame(Consensus, Consensus$chr)
 vec <- function(x){
   v <- 0
@@ -44,9 +46,10 @@ Temp <- sapply(Temp, vec, simplify = `array`)
 Temp <- unlist(Temp, use.names = FALSE)
 Consensus$Diff <- Temp
 Consensus <- Consensus[Consensus$Diff>=0,]
-
+# Making Granges Object
 GR <- makeGRangesFromDataFrame(Consensus, keep.extra.columns=TRUE)
 
+# Import Meta QTL Locations
 setwd("C:/Users/Shabana Usmani/sorghum-meta/sorghum-meta-QTL/Results")
 meta <- read_tsv("Meta.txt")
 gr <- makeGRangesFromDataFrame(meta)
@@ -76,12 +79,33 @@ df <- df[,c(1,4,2,5,3)]
 df <- df[!duplicated(df),]  
 colnames(df) <- c("MQTL","Chr","Marker","cM","Mb")
 
+# Predict physical interval with lm
 getinterval <- function(i){
   fit <- filter(df, df$MQTL==i)%>%
-        lm(formula=Mb~cM)%>%predict(newdata = data.frame(cM=unlist(meta[i,1:2], use.names = FALSE)), interval = "confidence", level=0.95)
+        lm(formula=Mb~cM)%>%predict(newdata = data.frame(cM=unlist(meta[i,1:2], use.names = FALSE)),interval = "confidence", level=0.90)
   fit <- c(fit[1,2],fit[dim(fit)[1],3])
   return(fit)
 }
 P95 <- sapply(1:32,getinterval)
-P90 <- sapply(1:32,getinterval)
-P75 <- sapply(1:32,getinterval)
+P95 <- t(P95)
+P95 <- data.frame(start=P95[,1], end=P95[,2], Chr=seqnames(gr), MQTL= 1:32)
+P95 <- P95[(P95[,2]-P95[,1])<10,]
+P95$start <- P95$start*10^6
+P95$end <- P95$end*10^6
+P95$Chr <- gsub("SBI-","",P95$Chr)
+p95 <- makeGRangesFromDataFrame(P95, keep.extra.columns = TRUE)
+
+
+
+#Fetch ensembl_gene_id, start_position, end_position, Sorghum bicolor from the plants_ensembl database
+ensembl <- useMart(biomart = "plants_mart",host = "plants.ensembl.org")
+searchDatasets(ensembl, pattern = "taestivum")
+ensembl <- useDataset(dataset = "taestivum_eg_gene", mart = ensembl)
+Genes <- getBM(attributes = c('ensembl_gene_id','chromosome_name','start_position','end_position'),filters = 'chromosome_name',values = c("1","2","3","4","7","10"), mart = ensembl)
+#Make a GRanges object from the Dataframe to do an overlap conveniently.
+GR <- makeGRangesFromDataFrame(Genes,keep.extra.columns=TRUE,seqnames.field=c("chromosome_name"),start.field="start_position",end.field="end_position")
+
+for(k in 1:10){
+  gset <- subsetByOverlaps(GR,reduce(p95)[k])$ensembl_gene_id
+  write.table(gset,paste0("Genesetregion",k,".txt"),quote = FALSE, row.names = FALSE, col.names = FALSE)
+}
