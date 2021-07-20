@@ -101,11 +101,14 @@ p95 <- makeGRangesFromDataFrame(P95, keep.extra.columns = TRUE)
 ensembl <- useMart(biomart = "plants_mart",host = "plants.ensembl.org")
 searchDatasets(ensembl, pattern = "taestivum")
 ensembl <- useDataset(dataset = "taestivum_eg_gene", mart = ensembl)
-Genes <- getBM(attributes = c('ensembl_gene_id','chromosome_name','start_position','end_position'),filters = 'chromosome_name',values = c("1","2","3","4","7","10"), mart = ensembl)
+Genes <- getBM(attributes = c('ensembl_gene_id','chromosome_name','start_position','end_position','name_1006'),filters = 'chromosome_name',values = c("1","2","3","4","7","10"), mart = ensembl)
 #Make a GRanges object from the Dataframe to do an overlap conveniently.
 GR <- makeGRangesFromDataFrame(Genes,keep.extra.columns=TRUE,seqnames.field=c("chromosome_name"),start.field="start_position",end.field="end_position")
 
 for(k in 1:10){
-  gset <- subsetByOverlaps(GR,reduce(p95)[k])$ensembl_gene_id
-  write.table(gset,paste0("Genesetregion",k,".txt"),quote = FALSE, row.names = FALSE, col.names = FALSE)
+  gset <- subsetByOverlaps(GR,reduce(p95)[k])
+  print(gset[grep("chlorophyll",gset$name_1006)])
+  # print(gset[grep("osmotic",gset$name_1006)])
+  # print(gset[grep("nitrogen",gset$name_1006)])
+  print(" ")
 }
