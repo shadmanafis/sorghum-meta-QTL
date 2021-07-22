@@ -82,7 +82,7 @@ colnames(df) <- c("MQTL","Chr","Marker","cM","Mb")
 # Predict physical interval with lm
 getinterval <- function(i){
   fit <- filter(df, df$MQTL==i)%>%
-        lm(formula=Mb~cM)%>%predict(newdata = data.frame(cM=unlist(meta[i,1:2], use.names = FALSE)),interval = "confidence", level=0.90)
+        lm(formula=Mb~cM)%>%predict(newdata = data.frame(cM=unlist(meta[i,1:2], use.names = FALSE)),interval = "confidence", level=0.95)
   fit <- c(fit[1,2],fit[dim(fit)[1],3])
   return(fit)
 }
@@ -99,16 +99,25 @@ p95 <- makeGRangesFromDataFrame(P95, keep.extra.columns = TRUE)
 
 #Fetch ensembl_gene_id, start_position, end_position, Sorghum bicolor from the plants_ensembl database
 ensembl <- useMart(biomart = "plants_mart",host = "plants.ensembl.org")
-searchDatasets(ensembl, pattern = "taestivum")
-ensembl <- useDataset(dataset = "taestivum_eg_gene", mart = ensembl)
+ensembl <- useDataset(dataset = "sbicolor_eg_gene", mart = ensembl)
 Genes <- getBM(attributes = c('ensembl_gene_id','chromosome_name','start_position','end_position','name_1006'),filters = 'chromosome_name',values = c("1","2","3","4","7","10"), mart = ensembl)
 #Make a GRanges object from the Dataframe to do an overlap conveniently.
 GR <- makeGRangesFromDataFrame(Genes,keep.extra.columns=TRUE,seqnames.field=c("chromosome_name"),start.field="start_position",end.field="end_position")
 
-for(k in 1:10){
+# for(k in 1:10){
+#   gset <- subsetByOverlaps(GR,reduce(p95)[k])
+#   print(gset[grep("chlorophyll",gset$name_1006)])
+#   # print(gset[grep("osmotic",gset$name_1006)])
+#   # print(gset[grep("nitrogen",gset$name_1006)])
+#   print(" ")
+# }
+
+for(k in 1:7){
   gset <- subsetByOverlaps(GR,reduce(p95)[k])
-  print(gset[grep("chlorophyll",gset$name_1006)])
-  # print(gset[grep("osmotic",gset$name_1006)])
+  # write.table(gset,paste("Genesetregions",k,".txt"),quote = FALSE, row.names = FALSE, col.names = FALSE)
+  chlorophyll <- append(chlorophyll,gset[grep("chlorophyll catabolic process",gset$name_1006)])
+  chlorophyll <- append(chlorophyll,gset[grep("chlorophyll biosynthetic process",gset$name_1006)])
+  nitrogen <- append(nitrogen,gset[grep("nitrogen",gset$name_1006)])
+  proteolysis <-  append(proteolysis,gset[grep("proteolysis involved in cellular protein catabolic process",gset$name_1006)])
   # print(gset[grep("nitrogen",gset$name_1006)])
-  print(" ")
 }
