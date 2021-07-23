@@ -112,12 +112,12 @@ GR <- makeGRangesFromDataFrame(Genes,keep.extra.columns=TRUE,seqnames.field=c("c
 #   print(" ")
 # }
 
-for(k in 1:7){
-  gset <- subsetByOverlaps(GR,reduce(p95)[k])
-  # write.table(gset,paste("Genesetregions",k,".txt"),quote = FALSE, row.names = FALSE, col.names = FALSE)
-  chlorophyll <- append(chlorophyll,gset[grep("chlorophyll catabolic process",gset$name_1006)])
-  chlorophyll <- append(chlorophyll,gset[grep("chlorophyll biosynthetic process",gset$name_1006)])
-  nitrogen <- append(nitrogen,gset[grep("nitrogen",gset$name_1006)])
-  proteolysis <-  append(proteolysis,gset[grep("proteolysis involved in cellular protein catabolic process",gset$name_1006)])
-  # print(gset[grep("nitrogen",gset$name_1006)])
-}
+# for(k in 1:7){
+#   gset <- subsetByOverlaps(GR,reduce(p95)[k])
+#   # write.table(gset,paste("Genesetregions",k,".txt"),quote = FALSE, row.names = FALSE, col.names = FALSE)
+#   chlorophyll <- append(chlorophyll,gset[grep("chlorophyll catabolic process",gset$name_1006)])
+#   chlorophyll <- append(chlorophyll,gset[grep("chlorophyll biosynthetic process",gset$name_1006)])
+#   nitrogen <- append(nitrogen,gset[grep("nitrogen",gset$name_1006)])
+#   proteolysis <-  append(proteolysis,gset[grep("proteolysis involved in cellular protein catabolic process",gset$name_1006)])
+#   # print(gset[grep("nitrogen",gset$name_1006)])
+# }
