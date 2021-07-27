@@ -61,8 +61,10 @@ meta <- read.table("Meta-weight.txt", header = TRUE)
 colnames(meta)[3] <- "chr"
 
 
-## Physical Map
+## Physical Map Data Prep
+source("C:/Users/Shabana Usmani/sorghum-meta/sorghum-meta-QTL/Physical Interval.R")
 pp95<-data.frame(reduce(p95))[,1:3]
+pp95[1,3] <- end(ranges(GR[24621]))
 pp95$seqnames <- c("10","02","02","03","03","03","04")
 pp95 <- arrange(pp95, seqnames)
 pp95$regions <- 1:7
@@ -70,26 +72,31 @@ reg_lim<-data.frame(regions=rep(1:7,2),x=c(pp95$start,pp95$end))
 p95_red <- makeGRangesFromDataFrame(pp95, keep.extra.columns = TRUE)
 seqlevels(GR) <- c("01","02","03","04","07","10")
 GR <- makeGRangesFromDataFrame(arrange(data.frame(GR),data.frame(GR)$seqnames))
-all_genes <- NULL
-for(i in 1:length(p95_red)){
-  temp <- data.frame(subsetByOverlaps(GR,p95_red[i]))
-  temp$region <- rep(i, nrow(temp))
-  all_genes <- rbind(all_genes,temp)
-}
-reg_lim$x[14]<-tail(all_genes[4580,3])
 meta$MQTL <- row.names(meta)
 meta$MQTL <- as.integer(meta$MQTL)
-merge <- left_join(data.frame(P95),meta, by=c("MQTL"="MQTL"))
-merge$region <- c(1,2,2,2,2,3,4,4,4,4,5,6,7)
-merge <- merge[,c(7,5,6,9,1,2)]
+P95[13,2] <- end(ranges(GR[24621]))
+
+# Number of Genes in a 250KB Bins in each region
 all_counts <- NULL
 for(i in 1:7){
   den <- GRanges(seqnames = pp95[i,1], ranges = IRanges(start=seq(pp95[i,2],pp95[i,3],by=250000), width = 250000), region=pp95[i,4])
   den$count <- countOverlaps(den, GR)
   all_counts <- rbind(all_counts, data.frame(den))
 }
-all_counts <- all_counts[1:164,]
 
+# Correspondance data for nested zooming
+merge <- left_join(data.frame(P95),meta, by=c("MQTL"="MQTL"))
+merge$region <- c(1,2,2,2,2,3,4,4,4,4,5,6,7)
+merge <- merge[,c(7,5,6,9,1,2)]
+merge2 <- NULL
+for(j in unique(merge$region)){
+  mr <- NULL
+  mr <- split(merge, merge$region)[[j]] %>% summarise(across(c(2,3,5,6),c(min,max))) %>%
+        dplyr::select(start.y_1,end.y_2,start.x_1,end.x_2)
+  mr <- cbind(mr,split(merge, merge$region)[[j]][1,c(1,4)])
+  merge2 <- rbind(merge2,mr)
+}
+merge2 <- merge2[,c(5,1,2,6,3,4)]
 
 ## SETTING COLOURS
 tr_col <- brewer.pal(11, "BrBG")[6]
@@ -147,4 +154,4 @@ f2 <- function(){
   },bg.border = NA)
 }
 
-circos.nested(f1,f2,merge2, connection_height = mm_h(10), adjust_start_degree = FALSE, connection_col = ni[merge2[[4]]])
+circos.nested(f1,f2,merge2, connection_height = mm_h(7), adjust_start_degree = FALSE, connection_col = ni[merge2[[4]]], connection_border = NA)
