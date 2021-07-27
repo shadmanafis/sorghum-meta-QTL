@@ -59,7 +59,8 @@ df <- data.frame()
 for(i in 1:length(ranges(gr))){
    hits <- subjectHits(findOverlaps(gr[i],GR))
    if(length(hits)!=0){
-     df <- rbind(df,paste(GR[(min(hits)-1):(max(hits)+1)]$feature,collapse = ","))
+     if((max(hits)+1)>length(GR)){df <- rbind(df,paste(GR[(min(hits)-1):(max(hits))]$feature,collapse = ","))
+     } else df <- rbind(df,paste(GR[(min(hits)-1):(max(hits)+1)]$feature,collapse = ","))
    } else {
       hits <- nearest(gr[i],GR)
      df <- rbind(df,paste(GR[(min(hits)-1):(max(hits)+1)]$feature,collapse = ","))
@@ -94,13 +95,14 @@ P95$start <- P95$start*10^6
 P95$end <- P95$end*10^6
 P95$Chr <- gsub("SBI-","",P95$Chr)
 p95 <- makeGRangesFromDataFrame(P95, keep.extra.columns = TRUE)
-
+seqlevels(p95) <- c("10","2","3","4")
 
 
 #Fetch ensembl_gene_id, start_position, end_position, Sorghum bicolor from the plants_ensembl database
 ensembl <- useMart(biomart = "plants_mart",host = "plants.ensembl.org")
 ensembl <- useDataset(dataset = "sbicolor_eg_gene", mart = ensembl)
-Genes <- getBM(attributes = c('ensembl_gene_id','chromosome_name','start_position','end_position','name_1006'),filters = 'chromosome_name',values = c("1","2","3","4","7","10"), mart = ensembl)
+Genes <- getBM(attributes = c('ensembl_gene_id','chromosome_name','start_position','end_position'),filters = 'chromosome_name',values = c("1","2","3","4","7","10"), mart = ensembl)
+Genes_GO <- getBM(attributes = c('ensembl_gene_id','chromosome_name','start_position','end_position','name_1006'),filters = 'chromosome_name',values = c("1","2","3","4","7","10"), mart = ensembl)
 #Make a GRanges object from the Dataframe to do an overlap conveniently.
 GR <- makeGRangesFromDataFrame(Genes,keep.extra.columns=TRUE,seqnames.field=c("chromosome_name"),start.field="start_position",end.field="end_position")
 
@@ -112,12 +114,15 @@ GR <- makeGRangesFromDataFrame(Genes,keep.extra.columns=TRUE,seqnames.field=c("c
 #   print(" ")
 # }
 
-# for(k in 1:7){
-#   gset <- subsetByOverlaps(GR,reduce(p95)[k])
-#   # write.table(gset,paste("Genesetregions",k,".txt"),quote = FALSE, row.names = FALSE, col.names = FALSE)
-#   chlorophyll <- append(chlorophyll,gset[grep("chlorophyll catabolic process",gset$name_1006)])
-#   chlorophyll <- append(chlorophyll,gset[grep("chlorophyll biosynthetic process",gset$name_1006)])
-#   nitrogen <- append(nitrogen,gset[grep("nitrogen",gset$name_1006)])
-#   proteolysis <-  append(proteolysis,gset[grep("proteolysis involved in cellular protein catabolic process",gset$name_1006)])
-#   # print(gset[grep("nitrogen",gset$name_1006)])
-# }
+for(k in 1:7){
+  gset <- subsetByOverlaps(GR,reduce(p95)[k])
+  # write.table(gset,paste("Genesetregions",k,".txt"),quote = FALSE, row.names = FALSE, col.names = FALSE)
+  chlorophyll <- append(chlorophyll,gset[grep("chlorophyll catabolic process",gset$name_1006)])
+  chlorophyll <- append(chlorophyll,gset[grep("chlorophyll biosynthetic process",gset$name_1006)])
+  # nitrogen <- append(nitrogen,gset[grep("nitrogen",gset$name_1006)])
+  # proteolysis <-  append(proteolysis,gset[grep("proteolysis involved in cellular protein catabolic process",gset$name_1006)])
+  # print(gset[grep("nitrogen",gset$name_1006)])
+}
+
+
+
