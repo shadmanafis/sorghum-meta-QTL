@@ -5,7 +5,7 @@ library(GenomicRanges)
 library(RColorBrewer)
 library(yarrr)
 #############################   DATA PREPARATION    #######################################################
-
+source("C:/Users/Shabana Usmani/sorghum-meta/sorghum-meta-QTL/Physical Interval.R")
 ## Consensus Map Data
 setwd("C:/Users/Shabana Usmani/sorghum-meta/sorghum-meta-QTL/Results/Consensus Maps")
 files <- list.files()
@@ -62,7 +62,6 @@ colnames(meta)[3] <- "chr"
 
 
 ## Physical Map Data Prep
-source("C:/Users/Shabana Usmani/sorghum-meta/sorghum-meta-QTL/Physical Interval.R")
 pp95<-data.frame(reduce(p95))[,1:3]
 pp95[1,3] <- end(ranges(GR[24621]))
 pp95$seqnames <- c("10","02","02","03","03","03","04")
@@ -102,7 +101,7 @@ merge2 <- merge2[,c(5,1,2,6,3,4)]
 tr_col <- brewer.pal(11, "BrBG")[6]
 ov_col <- brewer.pal(11, "BrBG")[10:11]
 col_fun = colorRamp2(c(min(meta$Wt), mean(meta$Wt), max(meta$Wt)), c("green", "black", "red"))
-col_fun2 = colorRamp2(c(min(all_counts$count), max(all_counts$count)), c("white", "brown1"))
+col_fun2 = colorRamp2(c(min(all_counts$count), max(all_counts$count)), c("#D9F0A3", "#004529"))
 ht <- brewer.pal(9, "Greens")[c(1,4)]
 gn <- brewer.pal(9, "Blues")
 ni = brewer.pal(9,"Greens")
@@ -115,11 +114,14 @@ f1 <- function(){
   circos.initialize(Consensus$chr, x=Consensus$cM)
   circos.track(Consensus$chr,x=Consensus$cM,ylim = c(0, 1), panel.fun = function(x, y) {
     xlim = CELL_META$xlim
-    circos.rect(xlim[1], 0, xlim[2], 0.3, col = rand_color(10, hue = "green", luminosity = "bright"), border=NA)
+    xcenter=CELL_META$xcenter
+    ycenter=CELL_META$ycenter
+    circos.rect(xlim[1], 0, xlim[2], 0.3, col = rand_color(10, hue = "green", luminosity = "dark"), border=NA)
     circos.segments(x, rep(0,length(x)),x, rep(0.3,length(x)), col="black")
     x = Consensus1$cM[Consensus1$chr==CELL_META$sector.index]
-    circos.segments(x, rep(0,length(x)),x, rep(0.5,length(x)), col="black")
-    circos.text(x, rep(1,length(x)),Consensus1$Marker[Consensus1$chr==CELL_META$sector.index],niceFacing = TRUE,facing = "clockwise",cex=0.8)
+    circos.segments(x, rep(0,length(x)),x, rep(0.4,length(x)), col="black")
+    circos.text(x, rep(0.75,length(x)),Consensus1$Marker[Consensus1$chr==CELL_META$sector.index],niceFacing = TRUE,facing = "clockwise",cex=0.8, font = 3)
+    circos.text(xcenter,ycenter/3,labels = CELL_META$sector.index, col = "floralwhite", font = 2)
   },bg.border = NA)
   circos.par(track.height=0.12)
   circos.track(result$V1,x=result$x,ylim = c(0, 0.15),panel.fun = function(x, y){
