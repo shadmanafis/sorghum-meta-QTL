@@ -1,0 +1,39 @@
+mapName=Kebede_2001
+Organism Genus=unknown
+Organism Species=unknown
+crossType=unknown
+popSize=0
+mappingCrossType=unknown
+mappingFunction=unknown
+mapUnit=cM
+mapExpansion=0
+mapQuality=0
+locusLocation=1
+chr=SBI-06
+lg=SBI-06
+1	psb546	0
+2	txs2063	2.35
+3	txs1085	4.44
+4	psb421	8.37
+5	umc44	32.41
+6	psb517	36.33
+7	isu58	51.49
+8	psb637a	67.95
+9	psb550	100.88
+10	psb553	110.81
+11	psb521	110.81
+12	psb708	116.3
+13	psb580	127.54
+14	psb546	0
+15	txs2063	2.35
+16	txs1085	4.44
+17	psb421	8.37
+18	umc44	32.41
+19	psb517	36.33
+20	isu58	51.49
+21	psb637a	67.95
+22	psb550	100.88
+23	psb553	110.81
+24	psb521	110.81
+25	psb708	116.3
+26	psb580	127.54
